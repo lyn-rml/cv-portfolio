@@ -3,6 +3,8 @@ import LetterGlitch from "../React/LetterGlitch.tsx";
 import LogoWall from "../components/logoWall.astro";
 import SkillsList from "../React/SkillsList.tsx";
 import type { HomeT, Lang, SkillsT } from "@/i18n/translations";
+import { createHash } from "node:crypto";
+import { readFileSync } from "node:fs";
 
 interface Props {
   lang: Lang;
@@ -23,7 +25,11 @@ const headingSizeClass =
       ? "text-5xl md:text-6xl lg:text-7xl"
       : "text-5xl md:text-7xl lg:text-8xl";
 
-const cvHref = `${import.meta.env.BASE_URL}${t.cvFile.replace(/^\//, "")}`;
+const cvVersion = createHash("sha256")
+  .update(readFileSync(`public${t.cvFile}`))
+  .digest("hex")
+  .slice(0, 12);
+const cvHref = `${import.meta.env.BASE_URL}${t.cvFile.replace(/^\//, "")}?v=${cvVersion}`;
 ---
 
 <section class="text-[var(--white)] mt-12 md:mt-0" id="home">

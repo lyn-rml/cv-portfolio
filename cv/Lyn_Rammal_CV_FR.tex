@@ -1,257 +1,81 @@
-% ==================================================================
-% Lyn Rammal - CV (version française)
-% Two-column layout (sidebar + main), single accent color, no photo.
-% Compile with pdflatex (or upload to Overleaf).
-% ==================================================================
-\documentclass[10pt,a4paper]{article}
-
-% ------------------------------------------------------------------
-% PACKAGES
-% ------------------------------------------------------------------
+\documentclass[9pt,a4paper]{extarticle}
 \usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
 \usepackage{lmodern}
-\usepackage[a4paper,left=1.3cm,right=1.3cm,top=1.2cm,bottom=1.2cm]{geometry}
-\usepackage{xcolor}
-\usepackage{paracol}
-\usepackage{enumitem}
-\usepackage{hyperref}
-\usepackage{tikz}
-\usetikzlibrary{calc}
-\usepackage{fontawesome5}
-
+\usepackage[a4paper,left=1.25cm,right=1.25cm,top=1.02cm,bottom=1.02cm]{geometry}
+\usepackage{xcolor,enumitem,hyperref,tabularx,array}
+\definecolor{accent}{HTML}{5B3A9E}
+\definecolor{dark}{HTML}{262626}
+\definecolor{muted}{HTML}{555555}
+\hypersetup{colorlinks=true,urlcolor=accent,linkcolor=accent,pdftitle={Lyn Rammal - CV},pdfauthor={Lyn Rammal}}
 \pagestyle{empty}
 \setlength{\parindent}{0pt}
-\raggedbottom
-
-% ------------------------------------------------------------------
-% COLORS
-% ------------------------------------------------------------------
-\definecolor{accent}{HTML}{5B3A9E}   % deep violet accent
-\definecolor{darkgray}{HTML}{262626}
-\definecolor{midgray}{HTML}{5A5A5A}
-
-\hypersetup{
-  colorlinks=true,
-  linkcolor=accent,
-  urlcolor=accent,
-  pdftitle={Lyn Rammal - CV},
-  pdfauthor={Lyn Rammal}
-}
-
-% ------------------------------------------------------------------
-% PLACEHOLDERS -- à vérifier avant l'envoi
-% ------------------------------------------------------------------
-\newcommand{\cvphone}{07 58 98 32 86}
-\newcommand{\langFR}{B2}
-\newcommand{\langEN}{B2}
-\newcommand{\langAR}{Natif}
-
-\newcommand{\cvemail}{lyn.rammal@ensta.fr}
-\newcommand{\cvlinkedin}{linkedin.com/in/lyn-rammal}
-\newcommand{\cvgithub}{github.com/lyn-rml}
-\newcommand{\cvlocation}{Paris, France}
-
-% ------------------------------------------------------------------
-% HELPER MACROS
-% ------------------------------------------------------------------
-
-% Sidebar section heading (COMPÉTENCES / LANGUES)
-\newcommand{\sidebarheading}[1]{%
-  \par\vspace{0pt}
-  {\color{accent}\bfseries\fontsize{11}{13}\selectfont #1}\par
-  \vspace{2pt}
-  {\color{accent}\rule{\linewidth}{0.8pt}}\par
-  \vspace{5pt}
-}
-
-% Skill category: bold label line, then a small comma-separated list
-\newcommand{\skillcat}[2]{%
-  {\small\color{darkgray}\bfseries #1}\par
-  {\footnotesize\color{midgray} #2}\par
-  \vspace{5pt}
-}
-
-% Spoken language line: name left, level right
-\newcommand{\spokenlang}[2]{%
-  {\small\color{darkgray} #1}\hfill{\footnotesize\color{midgray} #2}\par
-  \vspace{3pt}
-}
-
-% Contact line: label + value
-\newcommand{\contactline}[2]{%
-  {\footnotesize\color{darkgray}\bfseries #1: }{\footnotesize\color{midgray} #2}\par
-  \vspace{4pt}
-}
-
-% Main-column section heading (EXPÉRIENCE / PROJETS / FORMATION)
-% #1 = tikzmark name (used by the column-divider overlay), #2 = heading text.
-% The mark is placed INSIDE the heading's own text line (not as a separate
-% line before it) so its vertical position exactly matches the heading's
-% baseline -- this is what keeps COMPÉTENCES/EXPÉRIENCE PROFESSIONNELLE
-% aligned and the divider icons level with their titles.
-\newcommand{\mainheading}[2]{%
-  \par\vspace{0pt}
-  {\color{accent}\bfseries\fontsize{13}{15}\selectfont \tikzmark{#1}#2}\par
-  \vspace{2pt}
-  {\color{accent}\rule{\linewidth}{0.8pt}}\par
-  \vspace{6pt}
-}
-
-% Role / education block header: title -- dates on line 1, company -- duration on line 2
-\newcommand{\role}[4]{%
-  \par\noindent
-  {\bfseries\color{darkgray} #1}\hfill{\footnotesize\color{midgray} #3}\par
-  {\itshape\small\color{accent} #2}\hfill{\footnotesize\color{midgray} #4}\par
-  \vspace{3pt}
-}
-
-% Project title line: name left, status/context right
-\newcommand{\projecttitle}[2]{%
-  \par\noindent
-  {\bfseries\color{darkgray} #1}\hfill{\footnotesize\color{midgray} #2}\par
-  \vspace{2pt}
-}
-
-% Compact teaser bullet list
-\newenvironment{teasers}{%
-  \begin{itemize}[leftmargin=11pt, itemsep=2pt, topsep=2pt, parsep=0pt]
-  \small\color{midgray}
-}{%
-  \end{itemize}
-  \vspace{5pt}
-}
-\newcommand{\teaser}{\item[\textcolor{accent}{\textbullet}]}
-
-% Invisible coordinate mark used to anchor the column-divider line/icons
-% to the exact vertical position of a heading (see the overlay after \end{paracol}).
-\newcommand{\tikzmark}[1]{\tikz[remember picture, overlay]\node[coordinate](#1){};}
-
+\setlength{\parskip}{0pt}
+\setlength{\emergencystretch}{2em}
+\setlist[itemize]{leftmargin=11pt,topsep=1pt,itemsep=0pt,parsep=0pt,partopsep=0pt}
+\newcommand{\sectioncv}[1]{\vspace{5pt}{\bfseries\color{accent}\fontsize{10}{11}\selectfont #1}\par\vspace{1pt}{\color{accent}\rule{\linewidth}{0.55pt}}\vspace{2pt}}
+\newcommand{\job}[4]{\textbf{#1}\hfill{\color{muted}\footnotesize #3}\\[-2pt]{\color{accent}\itshape #2}\hfill{\color{muted}\footnotesize #4}\par\vspace{1pt}}
+\newcommand{\project}[2]{\textbf{#1}\hfill{\color{muted}\footnotesize #2}\par\vspace{1pt}}
+\newcommand{\tech}[1]{{\footnotesize\color{accent}#1}\par}
+\newcommand{\skill}[2]{\textbf{#1}\par{\color{muted}#2}\par\vspace{2pt}}
 \begin{document}
-
-% ==================================================================
-% FULL-WIDTH HEADER -- name/title/objective on the left, contact on the right
-% (no background fill; larger objective/contact text for readability)
-% ==================================================================
-\begin{minipage}[t]{0.6\linewidth}
-  {\fontsize{22}{24}\selectfont\bfseries\color{darkgray} Lyn Rammal}\par
-  \vspace{2pt}
-  {\small\bfseries\color{accent} Full-Stack \textperiodcentered\ IA \textperiodcentered\ Mobile}\par
-  \vspace{6pt}
-  {\normalsize\itshape\color{midgray}
-  Étudiant ingénieur en dernière année à l'ENSTA, à la recherche d'un stage de 6 mois à partir du 1er mars --- mon objectif : transformer les idées en production.
-  }\par
-\end{minipage}%
-\hfill
-\begin{minipage}[t]{0.35\linewidth}
-  \raggedleft
-  {\small\color{darkgray} \cvlocation}\par
-  \vspace{4pt}
-  {\small\color{darkgray} \cvphone}\par
-  \vspace{4pt}
-  {\small\color{darkgray} \href{mailto:\cvemail}{\cvemail}}\par
-  \vspace{4pt}
-  {\small\color{darkgray} \href{https://\cvlinkedin}{\cvlinkedin}}\par
-  \vspace{4pt}
-  {\small\color{darkgray} \href{https://\cvgithub}{\cvgithub}}\par
+\begin{center}
+{\fontsize{19}{21}\selectfont\bfseries\color{dark} Lyn Rammal}\par\vspace{1pt}
+{\color{accent}\bfseries Full-Stack $\cdot$ IA $\cdot$ Mobile}\par\vspace{3pt}
+{\footnotesize Paris, France $\cdot$ 07 58 98 32 86 $\cdot$ \href{mailto:lyn.rammal@ensta.fr}{lyn.rammal@ensta.fr}}\par\vspace{1pt}
+{\footnotesize \href{https://linkedin.com/in/lyn-rammal}{linkedin.com/in/lyn-rammal} $\cdot$ \href{https://lyn-rml.github.io/cv-portfolio/fr/}{lyn-rml.github.io/cv-portfolio/fr/}}
+\end{center}
+\vspace{1pt}
+{\small\color{muted} Élève ingénieure en dernière année à l'ENSTA, à la recherche d'un stage de 6 mois à partir du 1er mars 2027. Objectif : transformer les idées en solutions mises en production.}\par
+\sectioncv{EXPÉRIENCES PROFESSIONNELLES ET PROJETS ACADÉMIQUES}
+\job{Ingénieure logiciel --- Stage}{IBMH Conseils --- Expert-Lib / Workplace Suite, France}{Mai -- Sept. 2026}{4 mois}
+\begin{itemize}
+\item Développement d'une plateforme SaaS multi-tenant d'assistance en temps réel entre techniciens et experts, avec React Router (SSR/CSR), TypeScript, Supabase/PostgreSQL, isolation des données par RLS et contrôle d'accès par rôles.
+\item Application Android pour lunettes AR RealWear en Kotlin/Jetpack Compose : authentification à deux facteurs (P-256/HMAC), visioconférence Twilio et transcription en temps réel pour l'assistance mains libres.
+\item Pipeline d'IA générative (Hugging Face) convertissant les transcriptions en rapports d'intervention structurés ; optimisation des performances avec TanStack Query (cache et invalidation ciblée).
+\item Qualité du code avec ESLint et hooks Husky pre-commit ; plateforme déployée et utilisée en production.
+\end{itemize}
+\vspace{2pt}
+\job{Développeuse Full-Stack --- Stage}{Nokia, Liban}{Juil. -- Sept. 2024}{3 mois}
+\begin{itemize}
+\item Plateforme de publication d'eBooks avec planification du déploiement automatique : PostgreSQL, API et interface Next.js, au sein d'une équipe Agile.
+\end{itemize}
+\vspace{2pt}
+\job{MultiVisio}{Projet Système $\cdot$ ENSTA}{2025 -- 2026}{2e année}
+ Vision par ordinateur distribuée sur plusieurs flux ESP32-CAM : détection d'objets abandonnés, évaluation du danger et alertes en temps réel.\par
+\tech{YOLOv8 $\cdot$ DeepSORT $\cdot$ ESP32-CAM $\cdot$ React Native $\cdot$ WebSockets}
+\vspace{2pt}
+\job{NS4E --- Diagnostic et optimisation énergétique par IA neuro-symbolique}{Projet Système $\cdot$ ENSTA}{2026 -- 2027}{3e année}
+ Conception d'une architecture neuro-symbolique multi-agents pour optimiser l'énergie industrielle : détection d'anomalies, classification et clustering, règles métier et optimisation sous contraintes.\par
+\tech{Technologies envisagées : Python, PyTorch/TensorFlow, scikit-learn $\cdot$ Prolog, Clingo, Z3 $\cdot$ OR-Tools, GLPK $\cdot$ SPADE, JADE $\cdot$ Arduino, ESP32, IoT}
+\sectioncv{PROJETS PERSONNELS}
+\project{Marketplace B2B2C multi-tenant}{Full-stack }
+ Plateforme étudiante modulaire : chaque organisation (supermarché, résidence, association) active ses propres activités et modules métier. Isolation des données par schémas PostgreSQL dédiés aux tenants.\par
+\tech{React $\cdot$ Radix UI $\cdot$ Java $\cdot$ Spring Boot $\cdot$ PostgreSQL $\cdot$ OpenAPI (YAML)}
+\vspace{3pt}
+\project{AI Document Manager}{Mobile - IA}
+{\color{muted} Application React Native de scan de documents, extraction OCR et classement automatique ; RAG simple pour rechercher et interroger les documents en langage naturel.}\par
+\tech{React Native $\cdot$ FastAPI $\cdot$ PaddleOCR $\cdot$ PostgreSQL/pgvector $\cdot$ RAG $\cdot$ Hugging Face}
+\vspace{3pt}
+\project{Momentum --- Angular Frontend Engineering \& CI/CD}{Frontend - DevOps}
+ Application responsive de citations par catégorie, favoris, thèmes persistants, animations et stockage local. Qualité frontend, pipeline Jenkins CI/CD, conteneurisation Docker et déploiement Nginx sur serveur Ubuntu auto-hébergé.\par
+\tech{Angular $\cdot$ TypeScript $\cdot$ ESLint $\cdot$ Prettier $\cdot$ Husky $\cdot$ Tests $\cdot$ Jenkins $\cdot$ Docker $\cdot$ Nginx}
+\sectioncv{COMPÉTENCES TECHNIQUES}
+\begin{minipage}[t]{0.485\linewidth}\raggedright
+\skill{Langages}{Python, TypeScript/JavaScript, Java, Kotlin, C/C\#, PHP}
+\skill{Frontend \& Mobile}{React, Next.js, Angular, React Native, TanStack Query, Astro, Tailwind CSS}
+\skill{Backend}{Spring Boot, FastAPI, Django, Express.js, Ktor, API REST}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.485\linewidth}\raggedright
+\skill{Architecture système}{Conception d'API et de bases de données, multi-tenancy, caching, SSR/CSR, RLS}
+\skill{IA \& Vision par ordinateur}{PyTorch, YOLO, DeepSORT, OCR, RAG/LLMs, embeddings}
+\skill{Données \& Infrastructure}{PostgreSQL, Supabase, MongoDB, Redis, Docker, Linux, Jenkins}
 \end{minipage}
-
-\vspace{10pt}
-{\color{accent}\rule{\linewidth}{0.8pt}}\par
-\vspace{10pt}
-
-\columnratio{0.32}
-\setlength{\columnsep}{22pt}
-\setlength{\columnseprule}{0pt}
-
-\begin{paracol}{2}
-
-% ==================================================================
-% LEFT SIDEBAR
-% ==================================================================
-\raggedright
-
-\sidebarheading{COMPÉTENCES}
-
-\skillcat{Langages}{Python, TypeScript/JavaScript, Java, Kotlin, C/C\#, PHP}
-\skillcat{Frontend \& Mobile}{React \& Next.js, React Native, TanStack Query, Astro, Tailwind CSS}
-\skillcat{Backend}{FastAPI, Django, Express.js, Ktor, REST APIs}
-\skillcat{Architecture Système}{API Design, Database Design, Multi-Tenancy, Caching, SSR/CSR, RLS}
-\skillcat{IA \& Vision par Ordinateur}{PyTorch, YOLO \& DeepSORT, RAG/LLMs, Embeddings}
-\skillcat{Données \& Infrastructure}{PostgreSQL \& Supabase, MongoDB, Redis, Docker \& Linux}
-
-\vspace{6pt}
-\sidebarheading{LANGUES}
-
-\spokenlang{Français}{\langFR}
-\spokenlang{Anglais}{\langEN}
-\spokenlang{Arabe}{\langAR}
-
-\switchcolumn
-
-% ==================================================================
-% RIGHT MAIN COLUMN
-% ==================================================================
-\raggedright
-
-\mainheading{expTop}{EXPÉRIENCE PROFESSIONNELLE}
-
-\role{Ingénieur Logiciel --- Stage}{IBMH Conseils --- Expert-Lib / Workplace Suite, France}{Mai 2026 -- Sept 2026}{4 mois}
-\begin{teasers}
-  \teaser Un SaaS multi-tenant connectant des techniciens de terrain à des experts à distance en temps réel, ainsi qu'une application Android pour lunettes AR RealWear --- avec un système d'authentification à deux facteurs conçu pour un usage mains libres.
-  \teaser Un pipeline d'IA générative qui transforme les transcriptions d'appels brutes en rapports d'intervention structurés, supprimant totalement la rédaction post-session.
-  \teaser Ma première expérience de mise en production/staging --- un outil réellement utilisé par des clients, pas une simple démo.
-\end{teasers}
-
-\role{Développeur Full-Stack --- Stage}{Together For Chehim, Liban}{Avr 2025 -- Juil 2025}{2 mois}
-\begin{teasers}
-  \teaser Une plateforme de gestion des membres avec une hiérarchie de rôles assez flexible pour promouvoir ou rétrograder sans jamais dupliquer une fiche.
-  \teaser Génération automatisée de reçus de paiement PDF et UI/UX conçue de bout en bout sur Figma.
-\end{teasers}
-
-\role{Développeur Full-Stack --- Stage}{Nokia, Liban}{Juil 2024 -- Sept 2024}{3 mois}
-\begin{teasers}
-  \teaser Une plateforme de publication d'eBooks où les administrateurs choisissent une date de sortie et le déploiement se déclenche automatiquement.
-  \teaser Responsabilité full-stack sur PostgreSQL, la conception d'API et l'interface Next.js, au sein d'une équipe Agile.
-\end{teasers}
-
-\mainheading{projTop}{PROJETS}
-
-\projecttitle{MultiVisio}{Projet Académique \textperiodcentered\ ENSTA}
-{\small\color{midgray} Un système de vision par ordinateur distribué surveillant plusieurs flux ESP32-CAM en simultané --- détectant les objets abandonnés et évaluant leur niveau de danger avant d'alerter.}\par
-\vspace{2pt}
-{\footnotesize\color{accent} YOLOv8 \textperiodcentered\ DeepSORT \textperiodcentered\ ESP32-CAM \textperiodcentered\ React Native \textperiodcentered\ WebSockets}\par
-\vspace{7pt}
-
-\projecttitle{Smart Attendance System}{Projet de Fin d'Études \textperiodcentered\ Université Libanaise}
-{\small\color{midgray} Un système de présence fonctionnant entièrement sur microcontrôleur --- sans serveur, sans internet, authentification et stockage inclus.}\par
-\vspace{2pt}
-{\footnotesize\color{accent} ESP32 Web Server \textperiodcentered\ C++ \textperiodcentered\ HTML/CSS/JS}\par
-\vspace{7pt}
-
-\mainheading{eduTop}{FORMATION}
-
-\role{Diplôme d'Ingénieur --- Systèmes Numériques}{ENSTA \textperiodcentered\ Institut Polytechnique de Paris, France}{2025 -- 2027}{Dernière année}
-
-\role{Licence --- Ingénierie des Réseaux Informatiques et de Communication}{Université Libanaise, Liban}{2022 -- 2025}{Diplômé\tikzmark{eduBottom}}
-
-\end{paracol}
-
-% ==================================================================
-% COLUMN DIVIDER -- dashed line + icon badges in the gutter, marking
-% where "EXPÉRIENCE PROFESSIONNELLE", "PROJETS" and "FORMATION" begin,
-% to visually separate the sidebar from the main column now that
-% there is no background fill on the header.
-% ==================================================================
-\begin{tikzpicture}[remember picture, overlay]
-  \coordinate (gutterAnchor) at ($(current page.west)+(7.35cm,0)$);
-  \path let \p1=(gutterAnchor), \p2=(expTop) in coordinate (Aline) at (\x1,\y2);
-  \path let \p1=(gutterAnchor), \p2=(projTop) in coordinate (Cline) at (\x1,\y2);
-  \path let \p1=(gutterAnchor), \p2=(eduTop) in coordinate (Bline) at (\x1,\y2);
-  \path let \p1=(gutterAnchor), \p2=(eduBottom) in coordinate (Dline) at (\x1,\y2);
-  \draw[accent, dash pattern=on 1.8pt off 2pt, line width=0.8pt] (Aline) -- (Dline);
-  \node[fill=white, draw=accent, line width=0.7pt, circle, inner sep=1.6pt, yshift=4pt] at (Aline) {\tiny\color{accent}\faBriefcase};
-  \node[fill=white, draw=accent, line width=0.7pt, circle, inner sep=1.6pt, yshift=4pt] at (Cline) {\tiny\color{accent}\faRocket};
-  \node[fill=white, draw=accent, line width=0.7pt, circle, inner sep=1.6pt, yshift=4pt] at (Bline) {\tiny\color{accent}\faGraduationCap};
-\end{tikzpicture}
-
+\sectioncv{FORMATION}
+\job{Diplôme d'ingénieur --- Systèmes numériques}{ENSTA $\cdot$ Institut Polytechnique de Paris, France}{2025 -- 2027}{Dernière année}
+\vspace{1pt}
+\job{Licence --- Ingénierie des réseaux informatiques et de communication}{Université Libanaise, Liban}{2022 -- 2025}{Diplômée}
+\sectioncv{LANGUES}
+{\small Français : B2 \hspace{18pt} Anglais : B2 \hspace{18pt}}
 \end{document}

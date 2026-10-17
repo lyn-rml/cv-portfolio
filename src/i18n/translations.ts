@@ -72,8 +72,7 @@ export interface ProjectItemT {
   title: string;
   description: string;
   tags: string[];
-  image: string;
-  github?: string;
+  technologiesLabel?: string;
   status: string;
 }
 
@@ -249,14 +248,13 @@ export const translations: Record<Lang, Translations> = {
     projects: {
       sectionLabel: "My work",
       title: "Projects",
-      moreLabel: "More projects on",
+      moreLabel: "View projects on GitHub",
       items: [
         {
           title: "MultiVisio",
           description:
             "A distributed computer-vision system that watches multiple ESP32-CAM feeds at once, detects and tracks abandoned objects with YOLOv8 + DeepSORT, scores risk by proximity and time, and pushes real-time security alerts to a companion mobile app over WebSockets.",
           tags: ["YOLOv8", "OpenCV", "DeepSORT", "ESP32-CAM", "React Native", "Node.js", "MongoDB", "WebSockets"],
-          image: "https://placehold.co/600x400/141019/A476FF?text=MultiVisio",
           status: "Academic Project · ENSTA",
         },
         {
@@ -264,8 +262,32 @@ export const translations: Record<Lang, Translations> = {
           description:
             "An embedded web-based attendance system built around an ESP32 Web Server, allowing students to register their attendance through a local Wi-Fi network without Internet access. The ESP32 handles HTTP requests, authentication, token validation, attendance management, statistics, and persistent JSON storage on an SD card through a C++ backend and HTML/CSS/JavaScript interface.",
           tags: ["ESP32 Web Server", "C++", "HTML", "CSS", "JavaScript", "Wi-Fi", "HTTP", "JSON", "SD Card"],
-          image: "https://placehold.co/600x400/141019/A476FF?text=Smart+Attendance+System",
           status: "Final Year Project · Lebanese University",
+        },
+        {
+          title: "Momentum",
+          description: "Momentum is a frontend engineering project built with Angular and TypeScript to demonstrate modern frontend architecture and a complete deployment workflow.\n\nThe application offers responsive motivational quote experiences with category selection, favorites, persistent user preferences, light/dark mode, multiple UI themes, and animations. It focuses on reusable Angular components, services, Signals, typed models, accessibility, and clean state management.\n\nThe engineering workflow includes ESLint, Prettier, Husky, testing, Jenkins CI/CD, Docker, Nginx, and deployment on a personal Ubuntu server.",
+          tags: ["Angular", "TypeScript", "Signals", "ESLint", "Prettier", "Husky", "Testing", "Jenkins CI/CD", "Docker", "Nginx", "Ubuntu"],
+          status: "Project",
+        },
+        {
+          title: "AI Document Manager",
+          description: "A React Native mobile application for scanning documents, extracting their content with OCR, and automatically classifying them by category. A simple retrieval-augmented generation (RAG) integration enables document search and natural-language questions about their content.",
+          tags: ["React Native", "FastAPI", "PaddleOCR", "PostgreSQL / pgvector", "RAG", "Hugging Face"],
+          status: "Project",
+        },
+        {
+          title: "B2B2C Student Marketplace — Multi-Tenant Architecture",
+          description: "A personal learning project exploring multi-tenant SaaS architecture with a shared PostgreSQL database and a separate schema per tenant, while learning Java and Spring Boot for backend development.\n\nThe application connects students with supermarkets, student residences, and associations. Each organization manages its own data and can enable modules for discounted food baskets, student housing, or activities. The architecture explores tenant isolation, dynamic schema provisioning, role-based access control, and shared public data.\n\nThe objective is to gain practical experience in database architecture, multi-tenancy, REST API development, and Spring Boot while building a modular, scalable full-stack application.",
+          tags: ["React", "Radix UI", "TypeScript", "Java", "Spring Boot", "PostgreSQL", "OpenAPI (YAML)"],
+          status: "Project",
+        },
+        {
+          title: "NS4E — Neuro-Symbolic AI for Energy Diagnostics and Optimization",
+          description: "Designing a neuro-symbolic multi-agent architecture to optimize industrial energy consumption: neural AI for anomaly detection, classification, and clustering, combined with business-rule reasoning and constrained optimization.\n\nDeveloping an intelligent industrial prototype with Arduino/ESP32, sensors, and actuators, integrating an automated measurement → diagnosis → decision → optimization → action pipeline.",
+          tags: ["Python", "PyTorch", "TensorFlow", "scikit-learn", "Prolog", "Clingo", "Z3", "OR-Tools", "GLPK", "SPADE", "JADE", "Arduino", "ESP32", "IoT"],
+          status: "Systems Project · ENSTA · 2026–2027 | In progress",
+          technologiesLabel: "Planned technologies",
         },
       ],
     },
@@ -432,14 +454,13 @@ export const translations: Record<Lang, Translations> = {
     projects: {
       sectionLabel: "Mon travail",
       title: "Projets",
-      moreLabel: "Plus de projets sur",
+      moreLabel: "Voir les projets sur GitHub",
       items: [
         {
           title: "MultiVisio",
           description:
             "Un système de vision par ordinateur distribué qui surveille simultanément plusieurs flux ESP32-CAM, détecte et suit les objets abandonnés avec YOLOv8 + DeepSORT, évalue le risque selon la proximité et le temps, et envoie des alertes de sécurité en temps réel à une application mobile compagnon via WebSockets.",
           tags: ["YOLOv8", "OpenCV", "DeepSORT", "ESP32-CAM", "React Native", "Node.js", "MongoDB", "WebSockets"],
-          image: "https://placehold.co/600x400/141019/A476FF?text=MultiVisio",
           status: "Projet académique · ENSTA",
         },
         {
@@ -447,8 +468,32 @@ export const translations: Record<Lang, Translations> = {
           description:
             "Un système de présence embarqué basé sur un serveur web ESP32, permettant aux étudiants d'enregistrer leur présence via un réseau Wi-Fi local, sans accès à Internet. L'ESP32 gère les requêtes HTTP, l'authentification, la validation des jetons, la gestion des présences, les statistiques et le stockage JSON persistant sur carte SD, via un backend en C++ et une interface HTML/CSS/JavaScript.",
           tags: ["ESP32 Web Server", "C++", "HTML", "CSS", "JavaScript", "Wi-Fi", "HTTP", "JSON", "SD Card"],
-          image: "https://placehold.co/600x400/141019/A476FF?text=Smart+Attendance+System",
           status: "Projet de fin d'études · Université Libanaise",
+        },
+        {
+          title: "Momentum",
+          description: "Momentum est un projet d’ingénierie frontend développé avec Angular et TypeScript pour illustrer une architecture frontend moderne et un processus de déploiement complet.\n\nL’application propose une expérience responsive de citations motivantes : sélection par catégorie, favoris, préférences utilisateur persistantes, mode clair/sombre, plusieurs thèmes et animations. Le projet met l’accent sur les composants Angular réutilisables, les services, les Signals, les modèles typés, l’accessibilité et une gestion claire de l’état.\n\nLe processus d’ingénierie comprend ESLint, Prettier, Husky, les tests, Jenkins CI/CD, Docker, Nginx et le déploiement sur un serveur Ubuntu personnel.",
+          tags: ["Angular", "TypeScript", "Signals", "ESLint", "Prettier", "Husky", "Tests", "Jenkins CI/CD", "Docker", "Nginx", "Ubuntu"],
+          status: "Projet",
+        },
+        {
+          title: "AI Document Manager",
+          description: "Application mobile React Native permettant de scanner des documents, d’extraire leur contenu par OCR et de les classifier automatiquement par catégorie. Intégration d’un RAG simple pour rechercher les documents et interroger leur contenu en langage naturel.",
+          tags: ["React Native", "FastAPI", "PaddleOCR", "PostgreSQL / pgvector", "RAG", "Hugging Face"],
+          status: "Projet",
+        },
+        {
+          title: "B2B2C Student Marketplace — Architecture multi-tenant",
+          description: "Un projet personnel pour explorer l’architecture SaaS multi-tenant avec une base PostgreSQL partagée et un schéma distinct par tenant, tout en apprenant Java et Spring Boot pour le développement backend.\n\nL’application connecte les étudiants aux supermarchés, résidences étudiantes et associations. Chaque organisation gère ses propres données et peut activer des modules de paniers alimentaires à prix réduit, de logement étudiant ou d’activités. L’architecture explore l’isolation des tenants, la création dynamique de schémas, le contrôle d’accès par rôles et les données publiques partagées.\n\nL’objectif est d’acquérir une expérience pratique en architecture de bases de données, multi-tenancy, développement d’API REST et Spring Boot, tout en construisant une application full-stack modulaire et évolutive.",
+          tags: ["React", "Radix UI", "TypeScript", "Java", "Spring Boot", "PostgreSQL", "OpenAPI (YAML)"],
+          status: "Projet",
+        },
+        {
+          title: "NS4E — Diagnostic et optimisation énergétique par IA neuro-symbolique",
+          description: "Conception d’une architecture neuro-symbolique multi-agents pour optimiser la consommation énergétique industrielle : détection d’anomalies, classification et clustering par IA neuronale, raisonnement à base de règles métier et optimisation sous contraintes.\n\nDéveloppement d’un prototype industriel intelligent avec Arduino/ESP32, capteurs et actionneurs, intégrant une chaîne automatisée de mesure → diagnostic → décision → optimisation → action.",
+          tags: ["Python", "PyTorch", "TensorFlow", "scikit-learn", "Prolog", "Clingo", "Z3", "OR-Tools", "GLPK", "SPADE", "JADE", "Arduino", "ESP32", "IoT"],
+          status: "Projet Système · ENSTA · 2026–2027 | En cours",
+          technologiesLabel: "Technologies envisagées",
         },
       ],
     },
