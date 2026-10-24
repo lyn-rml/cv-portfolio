@@ -5,7 +5,7 @@
 \usepackage{lmodern}
 \usepackage[a4paper,left=1.25cm,right=1.25cm,top=1.02cm,bottom=1.02cm]{geometry}
 \usepackage{xcolor,enumitem,hyperref,tabularx,array}
-\definecolor{accent}{HTML}{5B3A9E}
+\definecolor{accent}{HTML}{1F3A5F}
 \definecolor{dark}{HTML}{262626}
 \definecolor{muted}{HTML}{555555}
 \hypersetup{colorlinks=true,urlcolor=accent,linkcolor=accent,pdftitle={Lyn Rammal - CV},pdfauthor={Lyn Rammal}}
@@ -31,41 +31,54 @@
 \sectioncv{EXPÉRIENCES PROFESSIONNELLES ET PROJETS ACADÉMIQUES}
 \job{Ingénieure logiciel --- Stage}{IBMH Conseils --- Expert-Lib / Workplace Suite, France}{Mai -- Sept. 2026}{4 mois}
 \begin{itemize}
-\item Développement d'une plateforme SaaS multi-tenant d'assistance en temps réel entre techniciens et experts, avec React Router (SSR/CSR), TypeScript, Supabase/PostgreSQL, isolation des données par RLS et contrôle d'accès par rôles.
-\item Application Android pour lunettes AR RealWear en Kotlin/Jetpack Compose : authentification à deux facteurs (P-256/HMAC), visioconférence Twilio et transcription en temps réel pour l'assistance mains libres.
-\item Pipeline d'IA générative (Hugging Face) convertissant les transcriptions en rapports d'intervention structurés ; optimisation des performances avec TanStack Query (cache et invalidation ciblée).
-\item Qualité du code avec ESLint et hooks Husky pre-commit ; plateforme déployée et utilisée en production.
+    \item Développement d'une plateforme SaaS multi-tenant d'assistance en temps réel entre techniciens et experts, avec React, TypeScript et Supabase/PostgreSQL, isolation des données par RLS et gestion du cache frontend avec TanStack Query.
+    
+    \item Développement d'une application Android pour lunettes AR RealWear en Kotlin/Jetpack Compose : authentification à deux facteurs (P-256/HMAC).
+    
+    \item Développement et gestion des interfaces de visioconférence Twilio côté web et mobile, avec transcription en temps réel et intégration d'un pipeline d'IA générative transformant les transcriptions en rapports d'intervention structurés.
 \end{itemize}
 \vspace{2pt}
+
 \job{Développeuse Full-Stack --- Stage}{Nokia, Liban}{Juil. -- Sept. 2024}{3 mois}
 \begin{itemize}
-\item Plateforme de publication d'eBooks avec planification du déploiement automatique : PostgreSQL, API et interface Next.js, au sein d'une équipe Agile.
+    \item Développement d'une plateforme Full-Stack de publication d'eBooks, avec automatisation et planification des déploiements à une date définie.
+    \item Travail en équipe Agile : participation aux sprints, revues et suivi continu de l'avancement du projet.
 \end{itemize}
 \vspace{2pt}
+
 \job{MultiVisio}{Projet Système $\cdot$ ENSTA}{2025 -- 2026}{2e année}
- Vision par ordinateur distribuée sur plusieurs flux ESP32-CAM : détection d'objets abandonnés, évaluation du danger et alertes en temps réel.\par
-\tech{YOLOv8 $\cdot$ DeepSORT $\cdot$ ESP32-CAM $\cdot$ React Native $\cdot$ WebSockets}
+Vision par ordinateur distribuée sur plusieurs flux ESP32-CAM : détection d'objets abandonnés, évaluation du danger et alertes en temps réel via une application mobile.\par
+\tech{Technologies : YOLOv8 $\cdot$ DeepSORT $\cdot$ ESP32-CAM $\cdot$ React Native $\cdot$ WebSockets}
+
 \vspace{2pt}
-\job{NS4E --- Diagnostic et optimisation énergétique par IA neuro-symbolique}{Projet Système $\cdot$ ENSTA}{2026 -- 2027}{3e année}
- Conception d'une architecture neuro-symbolique multi-agents pour optimiser l'énergie industrielle : détection d'anomalies, classification et clustering, règles métier et optimisation sous contraintes.\par
-\tech{Technologies envisagées : Python, PyTorch/TensorFlow, scikit-learn $\cdot$ Prolog, Clingo, Z3 $\cdot$ OR-Tools, GLPK $\cdot$ SPADE, JADE $\cdot$ Arduino, ESP32, IoT}
-\sectioncv{PROJETS PERSONNELS}
+\job{NS4E --- Diagnostic et optimisation énergétique par IA neuro-symbolique}
+{Projet Système $\cdot$ ENSTA}{2026 -- 2027}{3e année}
+
+Conception d'une architecture neuro-symbolique multi-agents pour optimiser
+l'énergie industrielle : simulation de machines et de capteurs,
+détection d'anomalies, raisonnement, optimisation sous contraintes
+et déclenchement d'actions automatisées.\par
+
+\tech{Technologies  : Python, PyTorch/TensorFlow,
+scikit-learn $\cdot$ Prolog, Clingo, Z3 $\cdot$ OR-Tools, GLPK
+$\cdot$ SPADE, JADE $\cdot$ IoT}
+\sectioncv{PROJETS }
 \project{Marketplace B2B2C multi-tenant}{Full-stack }
  Plateforme étudiante modulaire : chaque organisation (supermarché, résidence, association) active ses propres activités et modules métier. Isolation des données par schémas PostgreSQL dédiés aux tenants.\par
-\tech{React $\cdot$ Radix UI $\cdot$ Java $\cdot$ Spring Boot $\cdot$ PostgreSQL $\cdot$ OpenAPI (YAML)}
+\tech{Technologies : Java $\cdot$ Spring Boot $\cdot$ PostgreSQL $\cdot$ OpenAPI }
 \vspace{3pt}
 \project{AI Document Manager}{Mobile - IA}
 {\color{muted} Application React Native de scan de documents, extraction OCR et classement automatique ; RAG simple pour rechercher et interroger les documents en langage naturel.}\par
-\tech{React Native $\cdot$ FastAPI $\cdot$ PaddleOCR $\cdot$ PostgreSQL/pgvector $\cdot$ RAG $\cdot$ Hugging Face}
+\tech{Technologies : React Native $\cdot$ FastAPI $\cdot$ PaddleOCR $\cdot$ PostgreSQL/pgvector $\cdot$ RAG }
 \vspace{3pt}
 \project{Momentum --- Angular Frontend Engineering \& CI/CD}{Frontend - DevOps}
  Application responsive de citations par catégorie, favoris, thèmes persistants, animations et stockage local. Qualité frontend, pipeline Jenkins CI/CD, conteneurisation Docker et déploiement Nginx sur serveur Ubuntu auto-hébergé.\par
-\tech{Angular $\cdot$ TypeScript $\cdot$ ESLint $\cdot$ Prettier $\cdot$ Husky $\cdot$ Tests $\cdot$ Jenkins $\cdot$ Docker $\cdot$ Nginx}
+\tech{Technologies : Angular $\cdot$ TypeScript $\cdot$ ESLint $\cdot$ Prettier $\cdot$ Husky $\cdot$ Tests $\cdot$ Jenkins $\cdot$ Docker $\cdot$ Nginx}
 \sectioncv{COMPÉTENCES TECHNIQUES}
 \begin{minipage}[t]{0.485\linewidth}\raggedright
 \skill{Langages}{Python, TypeScript/JavaScript, Java, Kotlin, C/C\#, PHP}
-\skill{Frontend \& Mobile}{React, Next.js, Angular, React Native, TanStack Query, Astro, Tailwind CSS}
-\skill{Backend}{Spring Boot, FastAPI, Django, Express.js, Ktor, API REST}
+\skill{Frontend \& Mobile}{React, Next.js, Angular, React Native, TanStack Query, Tailwind CSS}
+\skill{Backend}{Spring Boot, FastAPI, Django, Express.js, Ktor}
 \end{minipage}\hfill
 \begin{minipage}[t]{0.485\linewidth}\raggedright
 \skill{Architecture système}{Conception d'API et de bases de données, multi-tenancy, caching, SSR/CSR, RLS}

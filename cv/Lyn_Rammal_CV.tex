@@ -5,7 +5,7 @@
 \usepackage{lmodern}
 \usepackage[a4paper,left=1.25cm,right=1.25cm,top=1.02cm,bottom=1.02cm]{geometry}
 \usepackage{xcolor,enumitem,hyperref,tabularx,array}
-\definecolor{accent}{HTML}{5B3A9E}
+\definecolor{accent}{HTML}{1F3A5F}
 \definecolor{dark}{HTML}{262626}
 \definecolor{muted}{HTML}{555555}
 \hypersetup{colorlinks=true,urlcolor=accent,linkcolor=accent,pdftitle={Lyn Rammal - CV},pdfauthor={Lyn Rammal}}
@@ -31,41 +31,41 @@
 \sectioncv{PROFESSIONAL EXPERIENCE AND ACADEMIC PROJECTS}
 \job{Software Engineering Intern}{IBMH Conseils --- Expert-Lib / Workplace Suite, France}{May -- Sep. 2026}{4 months}
 \begin{itemize}
-\item Developed a multi-tenant SaaS platform connecting field technicians and remote experts in real time using React Router (SSR/CSR), TypeScript and Supabase/PostgreSQL, with tenant isolation via RLS and role-based access control.
-\item Built an Android app for RealWear AR smart glasses using Kotlin/Jetpack Compose, featuring two-factor authentication (P-256/HMAC), Twilio video calls and live transcription for hands-free support.
-\item Built a generative AI pipeline (Hugging Face) converting call transcripts into structured intervention reports; improved performance with TanStack Query caching and targeted invalidation.
-\item Enforced code quality with ESLint and Husky pre-commit hooks; platform deployed and used in production.
+\item Developed a multi-tenant SaaS platform connecting technicians and experts in real time using React, TypeScript and Supabase/PostgreSQL, with data isolation via RLS and frontend cache management with TanStack Query.
+\item Developed an Android app for RealWear AR smart glasses using Kotlin/Jetpack Compose, featuring two-factor authentication (P-256/HMAC).
+\item Developed and managed Twilio video conferencing interfaces for web and mobile, with live transcription and integration of a generative AI pipeline converting transcripts into structured intervention reports.
 \end{itemize}
 \vspace{2pt}
 \job{Full-Stack Developer Intern}{Nokia, Lebanon}{Jul. -- Sep. 2024}{3 months}
 \begin{itemize}
-\item Developed an eBook publishing platform with scheduled automated deployment using PostgreSQL, APIs and Next.js within an Agile team.
+\item Developed a full-stack eBook publishing platform with automated deployments scheduled for a specified date.
+\item Worked within an Agile team, participating in sprints, reviews and ongoing project progress tracking.
 \end{itemize}
 \vspace{2pt}
 \job{MultiVisio}{Systems Project $\cdot$ ENSTA}{2025 -- 2026}{2nd year}
- Distributed computer vision across multiple ESP32-CAM feeds to detect unattended objects, assess risk levels and issue real-time alerts.\par
-\tech{YOLOv8 $\cdot$ DeepSORT $\cdot$ ESP32-CAM $\cdot$ React Native $\cdot$ WebSockets}
+ Distributed computer vision across multiple ESP32-CAM feeds to detect unattended objects, assess risk levels and issue real-time alerts through a mobile app.\par
+\tech{Technologies: YOLOv8 $\cdot$ DeepSORT $\cdot$ ESP32-CAM $\cdot$ React Native $\cdot$ WebSockets}
 \vspace{2pt}
 \job{NS4E --- Energy Diagnostics and Optimization with Neuro-Symbolic AI}{Systems Project $\cdot$ ENSTA}{2026 -- 2027}{3rd year}
- Design of a multi-agent neuro-symbolic architecture for industrial energy optimization, combining anomaly detection, classification, clustering, business rules and constraint-based optimization.\par
-\tech{Planned technologies: Python, PyTorch/TensorFlow, scikit-learn $\cdot$ Prolog, Clingo, Z3 $\cdot$ OR-Tools, GLPK $\cdot$ SPADE, JADE $\cdot$ Arduino, ESP32, IoT}
-\sectioncv{PERSONAL PROJECTS}
+ Design of a multi-agent neuro-symbolic architecture for industrial energy optimization, combining machine and sensor simulation, anomaly detection, reasoning, constraint-based optimization and automated actions.\par
+\tech{Technologies: Python, PyTorch/TensorFlow, scikit-learn $\cdot$ Prolog, Clingo, Z3 $\cdot$ OR-Tools, GLPK $\cdot$ SPADE, JADE $\cdot$ IoT}
+\sectioncv{PROJECTS}
 \project{Marketplace B2B2C multi-tenant}{Full-stack}
  Modular student marketplace where each organization (supermarket, student residence or association) enables its own services and business modules, with tenant isolation through dedicated PostgreSQL schemas.\par
-\tech{React $\cdot$ Radix UI $\cdot$ Java $\cdot$ Spring Boot $\cdot$ PostgreSQL $\cdot$ OpenAPI (YAML)}
+\tech{Technologies: Java $\cdot$ Spring Boot $\cdot$ PostgreSQL $\cdot$ OpenAPI}
 \vspace{3pt}
 \project{AI Document Manager}{Mobile - AI}
  React Native app for document scanning, OCR extraction and automatic categorization, using basic RAG to search documents and query their content in natural language.\par
-\tech{React Native $\cdot$ FastAPI $\cdot$ PaddleOCR $\cdot$ PostgreSQL/pgvector $\cdot$ RAG $\cdot$ Hugging Face}
+\tech{Technologies: React Native $\cdot$ FastAPI $\cdot$ PaddleOCR $\cdot$ PostgreSQL/pgvector $\cdot$ RAG}
 \vspace{3pt}
 \project{Momentum --- Angular Frontend Engineering \& CI/CD}{Frontend  - DevOps}
 {\color{muted} Responsive quote app with categories, favorites, persistent themes, animations and local storage. Frontend quality checks, Jenkins CI/CD, Docker containers and Nginx deployment on a self-hosted Ubuntu server.}\par
-\tech{Angular $\cdot$ TypeScript $\cdot$ ESLint $\cdot$ Prettier $\cdot$ Husky $\cdot$ Tests $\cdot$ Jenkins $\cdot$ Docker $\cdot$ Nginx}
+\tech{Technologies: Angular $\cdot$ TypeScript $\cdot$ ESLint $\cdot$ Prettier $\cdot$ Husky $\cdot$ Tests $\cdot$ Jenkins $\cdot$ Docker $\cdot$ Nginx}
 \sectioncv{TECHNICAL SKILLS}
 \begin{minipage}[t]{0.485\linewidth}\raggedright
 \skill{Languages}{Python, TypeScript/JavaScript, Java, Kotlin, C/C\#, PHP}
-\skill{Frontend \& Mobile}{React, Next.js, Angular, React Native, TanStack Query, Astro, Tailwind CSS}
-\skill{Backend}{Spring Boot, FastAPI, Django, Express.js, Ktor, REST APIs}
+\skill{Frontend \& Mobile}{React, Next.js, Angular, React Native, TanStack Query, Tailwind CSS}
+\skill{Backend}{Spring Boot, FastAPI, Django, Express.js, Ktor}
 \end{minipage}\hfill
 \begin{minipage}[t]{0.485\linewidth}\raggedright
 \skill{System Architecture}{API and database design, multi-tenancy, caching, SSR/CSR, RLS}

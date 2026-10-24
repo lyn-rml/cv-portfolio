@@ -189,7 +189,7 @@ export const translations: Record<Lang, Translations> = {
           bullets: [
             "Built a multi-tenant SaaS platform connecting field technicians with remote experts in real time, with React Router (SSR/CSR), TypeScript and Supabase/PostgreSQL — enforcing tenant isolation with row-level security and role-based access.",
             "Shipped a Kotlin/Jetpack Compose Android app for RealWear AR smart glasses, with P-256/HMAC-based two-factor authentication and live Twilio video with real-time transcription for hands-free field support.",
-            "Designed a generative-AI pipeline (Hugging Face) that turns raw call transcripts into structured intervention reports, removing manual write-up work after every session.",
+            "Designed a generative-AI pipeline that turns raw call transcripts into structured intervention reports, removing manual write-up work after every session.",
             "Sped up key screens with targeted TanStack Query caching/invalidation, and raised code quality bar with ESLint + Husky pre-commit checks.",
           ],
         },
@@ -266,7 +266,7 @@ export const translations: Record<Lang, Translations> = {
         },
         {
           title: "Momentum",
-          description: "Momentum is a frontend engineering project built with Angular and TypeScript to demonstrate modern frontend architecture and a complete deployment workflow.\n\nThe application offers responsive motivational quote experiences with category selection, favorites, persistent user preferences, light/dark mode, multiple UI themes, and animations. It focuses on reusable Angular components, services, Signals, typed models, accessibility, and clean state management.\n\nThe engineering workflow includes ESLint, Prettier, Husky, testing, Jenkins CI/CD, Docker, Nginx, and deployment on a personal Ubuntu server.",
+          description: "Momentum is a frontend engineering project built with Angular and TypeScript to demonstrate modern frontend architecture and a complete deployment workflow.\n\nThe engineering workflow includes ESLint, Prettier, Husky, testing, Jenkins CI/CD, Docker, Nginx, and deployment on a personal Ubuntu server.",
           tags: ["Angular", "TypeScript", "Signals", "ESLint", "Prettier", "Husky", "Testing", "Jenkins CI/CD", "Docker", "Nginx", "Ubuntu"],
           status: "Project",
         },
@@ -278,8 +278,8 @@ export const translations: Record<Lang, Translations> = {
         },
         {
           title: "B2B2C Student Marketplace — Multi-Tenant Architecture",
-          description: "A personal learning project exploring multi-tenant SaaS architecture with a shared PostgreSQL database and a separate schema per tenant, while learning Java and Spring Boot for backend development.\n\nThe application connects students with supermarkets, student residences, and associations. Each organization manages its own data and can enable modules for discounted food baskets, student housing, or activities. The architecture explores tenant isolation, dynamic schema provisioning, role-based access control, and shared public data.\n\nThe objective is to gain practical experience in database architecture, multi-tenancy, REST API development, and Spring Boot while building a modular, scalable full-stack application.",
-          tags: ["React", "Radix UI", "TypeScript", "Java", "Spring Boot", "PostgreSQL", "OpenAPI (YAML)"],
+          description: "Multi-tenant SaaS architecture with a shared PostgreSQL database and a separate schema per tenant, while learning Java and Spring Boot for backend development.\n\nThe application connects students with supermarkets, student residences, and associations. Each organization manages its own data and can enable modules for discounted food baskets, student housing, or activities. The architecture explores tenant isolation, dynamic schema provisioning, role-based access control, and shared public data.\n\nThe objective is to gain practical experience in database architecture, multi-tenancy, REST API development, and Spring Boot while building a modular, scalable full-stack application.",
+          tags: ["Java", "Spring Boot", "PostgreSQL", "OpenAPI "],
           status: "Project",
         },
         {
